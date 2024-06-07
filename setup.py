@@ -1,24 +1,30 @@
 from setuptools import setup, find_packages
-import pathlib
-from gpmf import __version__
 
-HERE = pathlib.Path(__file__).parent
-README = (HERE / "README.md").read_text()
-
-if __name__ == "__main__":
-    setup(
-        name="gpmf",
-        author="Alexis Mignon",
-        author_email="alexis.mignon@gmail.com",
-        description="A module to read GPMF data embedded in GoPro video files.",
-        long_description=README,
-        long_description_content_type="text/markdown",
-        version=__version__,
-        packages=find_packages(),
-        install_requires=[
-            "numpy", "pandas", "gpxpy",
-            "python-ffmpeg", "geopandas",
-            "contextily", "descartes"
-        ],
-        url="https://github.com/alexis-mignon/pygpmf"
-    )
+setup(
+    name='gpmf',
+    version='0.1.2',
+    description='Python library to parse GPMF data',
+    url='https://github.com/rkleivel/pygpmf',
+    author='Roald Kleiveland',
+    author_email='roald.kleiveland@gmail.com',
+    license='MIT',
+    packages=find_packages(),
+    install_requires=[
+        'numpy',
+        'ffmpeg-python'
+    ],
+    setup_requires=[
+        'numpy'
+    ],
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+    ],
+)
